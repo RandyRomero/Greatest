@@ -2,7 +2,21 @@
 
 '''Exercise from Automate the Boring Stuff With Python. Find the folder in a directory tree that has the greatest number of files or the folder that uses the most disk space.'''
 
-#def greatestNumber(path):
+def greatestNumber(path):
+	numberOfFiles = 0
+	greatestFolder = ''
+	for root, subfolders, files in os.walk(path):
+		#exclude hidden folders
+		subfolders[:] = [x for x in subfolders if not x.startswith('.')]  
+		for folder in subfolders:
+			currentNumberOfFiles = len(os.listdir(folder))
+			if currentNumberOfFiles > numberOfFiles:
+				numberOfFiles = currentNumberOfFiles
+				greatestFolder = folder
+				print(numberOfFiles)
+				print(greatestFolder)
+				print()
+
 #def mostDiskSpace(path):
 
 import os
@@ -38,7 +52,11 @@ while True:
 		logFile.write('Error: try another address.\n')
 		continue
 
+if mode == '1':
+	greatestNumber(path)
 
 
+print('Program has reached end. Ciao')
+logFile.write('Program has reached end. Ciao')
 #TODO: launch on of two engines
 #TODO: print out the result 
