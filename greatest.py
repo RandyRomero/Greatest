@@ -10,6 +10,8 @@ import os
 logFile = open('.\\logfile.txt', 'w')
 logFile.write('Log file has created. Program has started.\n\n')
 
+############################### Choosing mode ###############################
+
 while True:
 	mode = input('Hi there! Let\'s quickly get down to deal. \nIf you want to find a folder that contains the greatest number of files, press 1. \nIf you want to find a folder that uses the most disk space, press 2. \nYour answer is: ')
 	logFile.write('Hi there! Let\'s quickly get down to deal. \nIf you want to find a folder that contains the greatest number of files, press 1. \nIf you want to find a folder that uses the most disk space, press 2. Your answer is: \n\n')
@@ -21,6 +23,8 @@ while True:
 		print('Error: you must choose 1 or 2. Try Again.\n')
 		logFile.write('Error: you must choose 1 or 2. Try Again.\n')
 		continue
+
+############################### Aksing path ##################################
 		
 while True:
 	path = input('\nPlease write down path to directory: ')
@@ -36,7 +40,5 @@ while True:
 
 
 
-#TODO: ask user about directory
-#TODO: check whether directory valid and exists
 #TODO: launch on of two engines
 #TODO: print out the result 
