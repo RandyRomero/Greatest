@@ -5,13 +5,15 @@
 #def greatestNumber(path):
 #def mostDiskSpace(path):
 
-logFile = open('D:\\YandexDisk\\Studies\\Python\\Chapter 9\\GreatestNumberOfFiles\\logfile.txt', 'w')
+import os
+
+logFile = open('.\\logfile.txt', 'w')
 logFile.write('Log file has created. Program has started.\n\n')
 
 while True:
-	mode = int(input('Hi there! Let\'s quickly get down to deal. \nIf you want to find a folder that contains the greatest number of files, press 1. \nIf you want to find a folder that uses the most disk space, press 2. \nYour answer is: '))
+	mode = input('Hi there! Let\'s quickly get down to deal. \nIf you want to find a folder that contains the greatest number of files, press 1. \nIf you want to find a folder that uses the most disk space, press 2. \nYour answer is: ')
 	logFile.write('Hi there! Let\'s quickly get down to deal. \nIf you want to find a folder that contains the greatest number of files, press 1. \nIf you want to find a folder that uses the most disk space, press 2. Your answer is: \n\n')
-	if mode == 1 or mode == 2:
+	if mode == '1' or mode == '2':
 		print('You have chosen ' +str(mode) + '.')
 		logFile.write('User has chosen ' + str(mode) + '.\n\n')
 		break
@@ -20,12 +22,21 @@ while True:
 		logFile.write('Error: you must choose 1 or 2. Try Again.\n')
 		continue
 		
+while True:
+	path = input('\nPlease write down path to directory: ')
+	logFile.write('Please write down path to directory. User wrote: ' + path + '\n')
+	if os.path.exists(path):
+		print('Thank you.')
+		logFile.write('Path exists.\n')
+		break
+	else:
+		print('Error: try another address.')	
+		logFile.write('Error: try another address.\n')
+		continue
 
 
 
-
-#TODO: ask user what does he want: folder with greatest number. Store answer as boolean
 #TODO: ask user about directory
-#TODO: check whether directory valind and exists
+#TODO: check whether directory valid and exists
 #TODO: launch on of two engines
 #TODO: print out the result 
