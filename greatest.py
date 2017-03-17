@@ -8,14 +8,13 @@ def greatestNumber(path):
 	for root, subfolders, files in os.walk(path):
 		#exclude hidden folders
 		subfolders[:] = [x for x in subfolders if not x.startswith('.')]  
-		for folder in subfolders:
-			currentNumberOfFiles = len(os.listdir(folder))
-			if currentNumberOfFiles > numberOfFiles:
-				numberOfFiles = currentNumberOfFiles
-				greatestFolder = folder
-				print(numberOfFiles)
-				print(greatestFolder)
-				print()
+		numberOfFilesInCurrentFolder = len(os.listdir(root))
+		if numberOfFilesInCurrentFolder > numberOfFiles:
+			numberOfFiles = numberOfFilesInCurrentFolder
+			greatestFolder = root
+			print(numberOfFiles)
+			print(greatestFolder)
+			print()
 
 #def mostDiskSpace(path):
 
