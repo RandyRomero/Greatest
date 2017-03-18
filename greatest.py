@@ -47,7 +47,7 @@ while True:
 		prlog('Error: you must choose 1 or 2. Try Again.\n')
 		continue
 
-############################### Aksing path ##################################
+############################### Asking path ##################################
 		
 while True:
 	path = input('\nPlease write down path to directory: ')
