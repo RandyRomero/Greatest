@@ -57,8 +57,7 @@ while True:
 		logFile.write('Path exists.\n')
 		break
 	else:
-		print('Error: try another address.')	
-		logFile.write('Error: try another address.\n')
+		prlog('Error: try another address.')	
 		continue
 
 if mode == '1':
