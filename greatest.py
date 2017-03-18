@@ -3,6 +3,7 @@
 '''Exercise from Automate the Boring Stuff With Python. Find the folder in a directory tree that has the greatest number of files or the folder that uses the most disk space.'''
 
 def prlog(message):
+	#function that print user message and write to log file simu;taneously
 	print(message)
 	logFile.write(message + '\n')
 
@@ -16,10 +17,8 @@ def greatestNumber(path):
 		if numberOfFilesInCurrentFolder > numberOfFiles:
 			numberOfFiles = numberOfFilesInCurrentFolder
 			greatestFolder = root
-			print(numberOfFiles)
-			logFile.write(str(numberOfFiles) + '\n')
-			print(greatestFolder + '\n')
-			logFile.write(greatestFolder + '\n\n')
+			prlog(str(numberOfFiles))
+			prlog(greatestFolder + '\n')
 
 	prlog('*******************************************************')		
 	prlog('A folder with the greatest number of files is this: ')
