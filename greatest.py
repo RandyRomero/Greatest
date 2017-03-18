@@ -3,7 +3,7 @@
 '''Exercise from Automate the Boring Stuff With Python. Find the folder in a directory tree that has the greatest number of files or the folder that uses the most disk space.'''
 
 def prlog(message):
-	#function that print user message and write to log file simu;taneously
+	#function that print user message and write to log file simultaneously
 	print(message)
 	logFile.write(message + '\n')
 
@@ -37,15 +37,13 @@ logFile.write('Log file has created. Program has started.\n\n')
 ############################### Choosing mode ###############################
 
 while True:
-	mode = input('Hi there! Let\'s quickly get down to deal. \nIf you want to find a folder that contains the greatest number of files, press 1. \nIf you want to find a folder that uses the most disk space, press 2. \nYour answer is: ')
+	mode =input('Hi there! Let\'s quickly get down to deal. \nIf you want to find a folder that contains the greatest number of files, press 1. \nIf you want to find a folder that uses the most disk space, press 2. \nYour answer is: ')
 	logFile.write('Hi there! Let\'s quickly get down to deal. \nIf you want to find a folder that contains the greatest number of files, press 1. \nIf you want to find a folder that uses the most disk space, press 2. Your answer is: \n\n')
 	if mode == '1' or mode == '2':
-		print('You have chosen ' +str(mode) + '.')
-		logFile.write('User has chosen ' + str(mode) + '.\n\n')
+		prlog('You have chosen ' +str(mode) + '.')
 		break
 	else:
-		print('Error: you must choose 1 or 2. Try Again.\n')
-		logFile.write('Error: you must choose 1 or 2. Try Again.\n')
+		prlog('Error: you must choose 1 or 2. Try Again.\n')
 		continue
 
 ############################### Aksing path ##################################
