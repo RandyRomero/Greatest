@@ -37,8 +37,9 @@ logFile.write('Log file has created. Program has started.\n\n')
 ############################### Choosing mode ###############################
 
 while True:
-	mode =input('Hi there! Let\'s quickly get down to deal. \nIf you want to find a folder that contains the greatest number of files, press 1. \nIf you want to find a folder that uses the most disk space, press 2. \nYour answer is: ')
-	logFile.write('Hi there! Let\'s quickly get down to deal. \nIf you want to find a folder that contains the greatest number of files, press 1. \nIf you want to find a folder that uses the most disk space, press 2. Your answer is: \n\n')
+	userMessage1 = 'Hi there! Let\'s quickly get down to deal. \nIf you want to find a folder that contains the greatest number of files, press 1. \nIf you want to find a folder that uses the most disk space, press 2. \nYour answer is: '
+	mode = input(userMessage1)
+	logFile.write(userMessage1 + ' \n\n')
 	if mode == '1' or mode == '2':
 		prlog('You have chosen ' +str(mode) + '.')
 		break
