@@ -13,8 +13,16 @@ def greatestNumber(path):
 			numberOfFiles = numberOfFilesInCurrentFolder
 			greatestFolder = root
 			print(numberOfFiles)
-			print(greatestFolder)
-			print()
+			logFile.write(str(numberOfFiles) + '\n')
+			print(greatestFolder + '\n')
+			logFile.write(greatestFolder + '\n\n')
+
+	print('*******************************************************')		
+	print('A folder with the greatest number of files is this: ')
+	print(greatestFolder)
+	print('It contains {} files'.format(numberOfFiles))
+	print('*******************************************************')
+	print()	
 
 #def mostDiskSpace(path):
 
@@ -55,7 +63,7 @@ if mode == '1':
 	greatestNumber(path)
 
 
-print('Program has reached end. Ciao')
+print('Program has reached end. Ciao.')
 logFile.write('Program has reached end. Ciao')
 #TODO: launch on of two engines
 #TODO: print out the result 
