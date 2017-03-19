@@ -50,7 +50,7 @@ def mostDiskSpace(path):
 			prlog('')
 
 
-logFile = open('.\\logfile.txt', 'w')
+logFile = open('.\\logfile.txt', 'w', encoding='UTF-8')
 logFile.write('Log file has created. Program has started.\n\n')
 
 ############################### Choosing mode ###############################
