@@ -40,7 +40,10 @@ def mostDiskSpace(path):
 		subfolders[:] = [x for x in subfolders if not x.startswith('.')]
 		files = [x for x in files if not x.startswith('.')]
 		for file in files:
-			totalSizeCurrentRoot += os.path.getsize(os.path.join(root, file))
+			try:
+				totalSizeCurrentRoot += os.path.getsize(os.path.join(root, file))
+			except FileNotFoundError:
+				totalSizeCurrentRoot += os.path.getsize(os.path.join('\\\\?\\' + root, file))	
 		
 		if totalSizeCurrentRoot > totalSize:
 			totalSize = totalSizeCurrentRoot
