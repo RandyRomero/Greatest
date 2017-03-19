@@ -32,9 +32,7 @@ def greatestNumber(path):
 def mostDiskSpace(path):
 	totalSize = 0
 	heaviestFolder = ''
-	haviestFolder = ''
 	for root, subfolders, files in os.walk(path):
-		
 		totalSizeCurrentRoot = 0
 		#exclude hidden folders
 		subfolders[:] = [x for x in subfolders if not x.startswith('.')]
@@ -43,6 +41,7 @@ def mostDiskSpace(path):
 			try:
 				totalSizeCurrentRoot += os.path.getsize(os.path.join(root, file))
 			except FileNotFoundError:
+				#if path is to long for Windows we use this workaround
 				totalSizeCurrentRoot += os.path.getsize(os.path.join('\\\\?\\' + root, file))	
 		
 		if totalSizeCurrentRoot > totalSize:
@@ -59,6 +58,7 @@ def mostDiskSpace(path):
 	prlog('*******************************************************')
 	prlog('\n')				
 
+################### The very beginning f the program #######################
 
 logFile = open('.\\logfile.txt', 'w', encoding='UTF-8')
 logFile.write('Log file has created. Program has started.\n\n')
@@ -95,6 +95,3 @@ else:
 	mostDiskSpace(path)
 
 prlog('Program has reached end. Ciao.')
-
-#TODO: launch on of two engines
-#TODO: print out the result 
