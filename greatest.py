@@ -25,7 +25,7 @@ def greatestNumber(path):
 	prlog('*******************************************************')		
 	prlog('A folder with the greatest number of files is this: ')
 	prlog(greatestFolder)
-	prlog('It contains {} files'.format(numberOfFiles))
+	prlog('It contains {} files.'.format(numberOfFiles))
 	prlog('*******************************************************')
 	prlog('\n')	
 
@@ -48,13 +48,13 @@ def mostDiskSpace(path):
 			totalSize = totalSizeCurrentRoot
 			heaviestFolder = root
 			prlog(heaviestFolder)
-			prlog(str(totalSize / 1024 / 1024) + ' MB')
+			prlog(str('%0.2f' % (totalSize / 1024 / 1024)) + ' MB')
 			prlog('')
 
 	prlog('*******************************************************')		
 	prlog('A folder that uses the most disk space is this: ')
 	prlog(heaviestFolder)
-	prlog('Sum of its files is ' + str(totalSize / 1024 / 1024) + ' MB')
+	prlog('Sum of its files is ' + str('%0.2f' % (totalSize / 1024 / 1024)) + ' MB')
 	prlog('*******************************************************')
 	prlog('\n')				
 
