@@ -52,6 +52,13 @@ def mostDiskSpace(path):
 			prlog(str(totalSize / 1024 / 1024) + ' MB')
 			prlog('')
 
+	prlog('*******************************************************')		
+	prlog('A folder that uses the most disk space is this: ')
+	prlog(heaviestFolder)
+	prlog('Sum of its files is ' + str(totalSize / 1024 / 1024) + ' MB')
+	prlog('*******************************************************')
+	prlog('\n')				
+
 
 logFile = open('.\\logfile.txt', 'w', encoding='UTF-8')
 logFile.write('Log file has created. Program has started.\n\n')
